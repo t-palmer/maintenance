@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- above 3 meta tags *must* come first in the head -->
 
-    <title>Starter</title>
+    <title>Maintenence</title>
 
     <!-- AngularJS -->
     <script src="node_modules/angular/angular.js"></script>
@@ -21,10 +21,18 @@
     <script src="app.js"></script>
 
 </head>
-<body>
-<div class="container-fluid">
-    <h1>Maintenence</h1>
+<body ng-controller="PageController">
+    <div class="container-fluid">
+        <h1>Maintenence</h1>
 
-</div>
+        <pre>{{vm.equipment}}</pre>
+
+        <pre>{{vm.maintenence}}</pre>
+
+    </div>
+
+    <script src="data/equipment.js"></script>
+    <script src="app/equipment-service.js"></script>
+    <script src="app/page.js"></script>
 </body>
 </html>
