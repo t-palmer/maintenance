@@ -1,27 +1,89 @@
 const equipment = [
     {
         name: "Compressor Small",
-        maintenence: ["annual", "monthly"]
+        maintenence: [
+            {
+                maintenenceType: "annual",
+                status: "pending"
+            },
+            {
+                maintenenceType: "monthly",
+                status: "complete"
+            }
+        ]
     },
     {
         name: "Compressor Medium",
-        maintenence: ["annual", "monthly", 'weekly']
+        maintenence: [
+            {
+                maintenenceType: "annual",
+                status: "complete"
+            },
+            {
+                maintenenceType: "monthly",
+                status: "overdue"
+            },
+            {
+                maintenenceType: "weekly",
+                status: "pending"
+            }
+        ]
     },
     {
         name: "Compressor Large",
-        maintenence: ["annual", "daily"]
+        maintenence: [
+            {
+                maintenenceType: "annual",
+                status: "overdue"
+            },
+            {
+                maintenenceType: "daily",
+                status: "complete"
+            }
+        ]
     },
     {
         name: "Air Handler Small",
-        maintenence: ["monthly", "weekly"]
+        maintenence: [
+            {
+                maintenenceType: "monthly",
+                status: "pending"
+            },
+            {
+                maintenenceType: "weekly",
+                status: "complete"
+            }
+        ]
     },
     {
         name: "Air Handler Medium",
-        maintenence: ["annual", "monthly"]
+        maintenence: [
+            {
+                maintenenceType: "annual",
+                status: "pending"
+            },
+            {
+                maintenenceType: "monthly",
+                status: "complete"
+            }
+        ]
     },
     {
         name: "Air Handler Large",
-        maintenence: ["annual", "monthly", "daily"]
+        maintenence: [
+            {
+                maintenenceType: "annual",
+                status: "overdue"
+            },
+            {
+                maintenenceType: "monthly",
+                status: "complete"
+            },
+            {
+                maintenenceType: "daily",
+                status: "complete"
+            }
+        ]
     }
 ];
 

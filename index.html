@@ -24,11 +24,21 @@
 <body ng-controller="PageController">
     <div class="container-fluid">
         <h1>Maintenence</h1>
-
-        <pre>{{vm.equipment}}</pre>
-
-        <pre>{{vm.maintenence}}</pre>
-
+        <ul class="list-group">
+            <li ng-repeat="piece in vm.equipment" class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-4">{{piece.name}}</div>
+                    <div class="col-sm-8">
+                        <div ng-repeat="maintenenceSchedule in piece.maintenence">
+                            <div class="alert" ng-class="alertClass(maintenenceSchedule.status)">
+                                {{vm.maintenence[maintenenceSchedule.maintenenceType].name}} :
+                                {{vm.maintenence[maintenenceSchedule.maintenenceType].description}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <script src="data/equipment.js"></script>
