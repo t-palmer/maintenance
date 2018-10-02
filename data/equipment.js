@@ -1,93 +1,93 @@
 const equipment = [
     {
         name: "Compressor Small",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "annual",
+                maintenanceType: "annual",
                 status: "pending"
             },
             {
-                maintenenceType: "monthly",
+                maintenanceType: "monthly",
                 status: "complete"
             }
         ]
     },
     {
         name: "Compressor Medium",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "annual",
+                maintenanceType: "annual",
                 status: "complete"
             },
             {
-                maintenenceType: "monthly",
+                maintenanceType: "monthly",
                 status: "overdue"
             },
             {
-                maintenenceType: "weekly",
+                maintenanceType: "weekly",
                 status: "pending"
             }
         ]
     },
     {
         name: "Compressor Large",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "annual",
+                maintenanceType: "annual",
                 status: "overdue"
             },
             {
-                maintenenceType: "daily",
+                maintenanceType: "daily",
                 status: "complete"
             }
         ]
     },
     {
         name: "Air Handler Small",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "monthly",
+                maintenanceType: "monthly",
                 status: "pending"
             },
             {
-                maintenenceType: "weekly",
+                maintenanceType: "weekly",
                 status: "complete"
             }
         ]
     },
     {
         name: "Air Handler Medium",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "annual",
+                maintenanceType: "annual",
                 status: "pending"
             },
             {
-                maintenenceType: "monthly",
+                maintenanceType: "monthly",
                 status: "complete"
             }
         ]
     },
     {
         name: "Air Handler Large",
-        maintenence: [
+        maintenance: [
             {
-                maintenenceType: "annual",
+                maintenanceType: "annual",
                 status: "overdue"
             },
             {
-                maintenenceType: "monthly",
+                maintenanceType: "monthly",
                 status: "complete"
             },
             {
-                maintenenceType: "daily",
+                maintenanceType: "daily",
                 status: "complete"
             }
         ]
     }
 ];
 
-const maintenence = {
+const maintenance = {
     annual: {
         name: "Annual Maintenence",
         description: "Maintenence done yearly",

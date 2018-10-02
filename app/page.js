@@ -11,16 +11,16 @@
     function PageController ($scope, EquipmentService) {
         $scope.vm = {};
         $scope.vm.equipment = EquipmentService.equipmentList();
-        $scope.vm.maintenence = EquipmentService.maintenenceList();
+        $scope.vm.maintenance = EquipmentService.maintenanceList();
 
-        $scope.alertClass = function (maintenenceStatus){
-            if (maintenenceStatus === 'overdue'){
+        $scope.alertClass = function (maintenanceStatus){
+            if (maintenanceStatus === 'overdue'){
                 return 'alert-danger';
             }
-            if (maintenenceStatus === 'complete'){
+            if (maintenanceStatus === 'complete'){
                 return 'alert-success';
             }
-            if (maintenenceStatus === 'pending'){
+            if (maintenanceStatus === 'pending'){
                 return 'alert-warning';
             }
         }

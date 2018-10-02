@@ -18,8 +18,8 @@
                 return equipment;
 
             },
-            maintenenceList: function () {
-                return maintenence;
+            maintenanceList: function () {
+                return maintenance;
             }
         };
         return EquipmentService;

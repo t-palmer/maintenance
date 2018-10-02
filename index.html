@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- above 3 meta tags *must* come first in the head -->
 
-    <title>Maintenence</title>
+    <title>Maintenance</title>
 
     <!-- AngularJS -->
     <script src="node_modules/angular/angular.js"></script>
@@ -23,17 +23,14 @@
 </head>
 <body ng-controller="PageController">
     <div class="container-fluid">
-        <h1>Maintenence</h1>
+        <h1>Maintenance</h1>
         <ul class="list-group">
             <li ng-repeat="piece in vm.equipment" class="list-group-item">
                 <div class="row">
                     <div class="col-sm-4">{{piece.name}}</div>
                     <div class="col-sm-8">
-                        <div ng-repeat="maintenenceSchedule in piece.maintenence">
-                            <div class="alert" ng-class="alertClass(maintenenceSchedule.status)">
-                                {{vm.maintenence[maintenenceSchedule.maintenenceType].name}} :
-                                {{vm.maintenence[maintenenceSchedule.maintenenceType].description}}
-                            </div>
+                        <div ng-repeat="maintenanceSchedule in piece.maintenance">
+                            <maint-maintenance-alert maintenance-schedule="maintenanceSchedule"></maint-maintenance-alert>
                         </div>
                     </div>
                 </div>
@@ -43,6 +40,7 @@
 
     <script src="data/equipment.js"></script>
     <script src="app/equipment-service.js"></script>
+    <script src="app/maintenance-alert.js"></script>
     <script src="app/page.js"></script>
 </body>
 </html>
