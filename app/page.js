@@ -9,6 +9,6 @@
 
     PageController.$inject = ['$scope'];
     function PageController ($scope) {
-
+        $scope.displayModel = 'Equipment';
     }
 })();

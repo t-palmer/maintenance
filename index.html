@@ -24,13 +24,21 @@
 <body ng-controller="PageController">
     <div class="container-fluid">
 
-        <h1>Maintenance</h1>
+        <h1>Maintenance Management</h1>
+        <div class="btn-group">
+            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Equipment'">Equipment View</label>
+            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Maintenance'">Maintenance View</label>
+        </div>
 
-        <h2>Equipment View</h2>
-        <maint-view-equipment></maint-view-equipment>
+        <div ng-show="displayModel === 'Equipment'">
+            <h2>Equipment View</h2>
+            <maint-view-equipment></maint-view-equipment>
+        </div>
 
-        <h2>Maintenance View</h2>
-        <maint-view-maintenance></maint-view-maintenance>
+        <div ng-show="displayModel === 'Maintenance'">
+            <h2>Maintenance View</h2>
+            <maint-view-maintenance></maint-view-maintenance>
+        </div>
 
     </div>
 
