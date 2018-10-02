@@ -13,9 +13,9 @@
         const vm = this;
         vm.maintenance = EquipmentService.maintenanceList();
         vm.alertClass = {
-            overdue: 'alert-danger',
-            complete: 'alert-success',
-            pending: 'alert-warning'
+            overdue: 'label-danger',
+            complete: 'label-success',
+            pending: 'label-warning'
 
         };
     }
@@ -27,8 +27,9 @@
     function maintMaintenanceAlert() {
         const directive = {
             templateUrl: 'app/maintenance-alert.html',
+            transclude: true,
             scope: {
-                maintenanceSchedule: '='
+                status: '='
             },
             controller: MaintenanceAlertController,
             bindToController: true,

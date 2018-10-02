@@ -23,24 +23,37 @@
 </head>
 <body ng-controller="PageController">
     <div class="container-fluid">
+
         <h1>Maintenance</h1>
+
+        <h2>Equipment View</h2>
+        <maint-view-equipment></maint-view-equipment>
+
+        <h2>Maintenance View</h2>
         <ul class="list-group">
-            <li ng-repeat="piece in vm.equipment" class="list-group-item">
+            <li ng-repeat="maintenanceKey in vm.maintenanceKeys" class="list-group-item">
                 <div class="row">
-                    <div class="col-sm-4">{{piece.name}}</div>
+                    <div class="col-sm-4">{{vm.maintenance[maintenanceKey].name}}</div>
                     <div class="col-sm-8">
-                        <div ng-repeat="maintenanceSchedule in piece.maintenance">
-                            <maint-maintenance-alert maintenance-schedule="maintenanceSchedule"></maint-maintenance-alert>
-                        </div>
+                        <ul class="list-group">
+                            <li ng-repeat="piece in vm.equipmentGroupedByMaintenance[maintenanceKey]" class="list-group-item">
+                                {{piece.piece}}
+                                <maint-maintenance-alert status="piece.status">
+                                    {{piece.status}}
+                                </maint-maintenance-alert>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </li>
         </ul>
+
     </div>
 
     <script src="data/equipment.js"></script>
     <script src="app/equipment-service.js"></script>
     <script src="app/maintenance-alert.js"></script>
+    <script src="app/view-equipment.js"></script>
     <script src="app/page.js"></script>
 </body>
 </html>

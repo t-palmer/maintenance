@@ -101,7 +101,7 @@ const maintenance = {
     weekly: {
         name: "Weekly Maintenence",
         description: "Maintenence done monthly",
-        days: 30
+        days: 7
     },
     daily: {
         name: "Daily Maintenence",

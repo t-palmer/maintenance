@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <li ng-repeat="piece in vm.equipment" class="list-group-item">
+        <div class="row">
+            <div class="col-sm-4">{{piece.name}}</div>
+            <div class="col-sm-8">
+                <div ng-repeat="maintenanceSchedule in piece.maintenance">
+                    <maint-maintenance-alert  status="maintenanceSchedule.status">
+                        {{vm.maintenance[maintenanceSchedule.maintenanceType].name}}
+                    </maint-maintenance-alert>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
