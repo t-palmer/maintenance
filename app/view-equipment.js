@@ -13,6 +13,17 @@
         const vm = this;
         vm.equipment = EquipmentService.equipmentList();
         vm.maintenance = EquipmentService.maintenanceList();
+        vm.maintenanceKeys = Object.keys(vm.maintenance);
+        vm.maintModel = {};
+
+        function initialize(){
+            for (let maintKey in vm.maintenance) {
+                vm.maintModel[maintKey] = true;
+            }
+        }
+        initialize();
+
+
     }
 
     ///////////////////////////////////

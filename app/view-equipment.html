@@ -1,14 +1,32 @@
-<ul class="list-group">
-    <li ng-repeat="piece in vm.equipment" class="list-group-item">
-        <div class="row">
-            <div class="col-sm-4">{{piece.name}}</div>
-            <div class="col-sm-8">
-                <div ng-repeat="maintenanceSchedule in piece.maintenance">
-                    <maint-maintenance-alert  status="maintenanceSchedule.status">
-                        {{vm.maintenance[maintenanceSchedule.maintenanceType].name}}
-                    </maint-maintenance-alert>
+<div class="row">
+    <div class="col-sm-8">
+        <ul class="list-group">
+            <li ng-repeat="piece in vm.equipment" class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-6">{{piece.name}}</div>
+                    <div class="col-sm-6">
+                        <div ng-repeat="maintenanceSchedule in piece.maintenance">
+                            <maint-maintenance-alert  status="maintenanceSchedule.status" ng-show="vm.maintModel[maintenanceSchedule.maintenanceType]">
+                                {{vm.maintenance[maintenanceSchedule.maintenanceType].name}}
+                            </maint-maintenance-alert>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </li>
-</ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-sm-4">
+        <ul class="list-group">
+            <li ng-repeat="maintenanceKey in vm.maintenanceKeys" class="list-group-item">
+                <div class="checkbox">
+                    <label>
+                        <input ng-change="vm.maintenanceGroupChange()" type="checkbox" ng-model="vm.maintModel[maintenanceKey]"> {{vm.maintenance[maintenanceKey].name}}
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
