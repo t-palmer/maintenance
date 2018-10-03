@@ -44,11 +44,17 @@
 
         <div ng-show="displayModel === 'Equipment'">
             <h2>Equipment View</h2>
+            <p>List of equipment with required maintenance for each.
+                Use the selector to display only the selected maintenance.
+            </p>
             <maint-view-equipment></maint-view-equipment>
         </div>
 
         <div ng-show="displayModel === 'Maintenance'">
             <h2>Maintenance View</h2>
+            <p>List of the types of maintenance.
+                Show the list of equipment that requires that maintenance.
+            </p>
             <maint-view-maintenance></maint-view-maintenance>
         </div>
 
