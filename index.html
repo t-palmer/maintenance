@@ -24,11 +24,22 @@
 <body ng-controller="PageController">
     <div class="container-fluid">
 
-        <h1>Maintenance Management</h1>
-        <div class="btn-group">
-            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Equipment'">Equipment View</label>
-            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Maintenance'">Maintenance View</label>
-            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Group'">Group View</label>
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Maintenance Management</h1>
+                <div class="btn-group">
+                    <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Equipment'">Equipment View</label>
+                    <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Maintenance'">Maintenance View</label>
+                    <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Group'">Group View</label>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h2>Key</h2>
+                <maint-maintenance-alert status="'complete'" style="margin-right: 10px">Complete</maint-maintenance-alert>
+                <maint-maintenance-alert status="'pending'" style="margin-right: 10px">Pending</maint-maintenance-alert>
+                <maint-maintenance-alert status="'overdue'">Overdue</maint-maintenance-alert>
+            </div>
         </div>
 
         <div ng-show="displayModel === 'Equipment'">
