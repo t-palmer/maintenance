@@ -28,6 +28,7 @@
         <div class="btn-group">
             <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Equipment'">Equipment View</label>
             <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Maintenance'">Maintenance View</label>
+            <label class="btn btn-primary" ng-model="displayModel" uib-btn-radio="'Group'">Group View</label>
         </div>
 
         <div ng-show="displayModel === 'Equipment'">
@@ -40,6 +41,10 @@
             <maint-view-maintenance></maint-view-maintenance>
         </div>
 
+        <div ng-show="displayModel === 'Group'">
+            <h2>Group View</h2>
+            <maint-view-group></maint-view-group>
+        </div>
     </div>
 
     <script src="data/equipment.js"></script>
@@ -47,6 +52,7 @@
     <script src="app/maintenance-alert.js"></script>
     <script src="app/view-equipment.js"></script>
     <script src="app/view-maintenance.js"></script>
+    <script src="app/view-group.js"></script>
     <script src="app/page.js"></script>
 </body>
 </html>

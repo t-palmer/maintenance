@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-sm-4">{{vm.maintenance[maintenanceKey].name}}</div>
             <div class="col-sm-8">
+                <!--
                 <ul class="list-group">
                     <li ng-repeat="piece in vm.equipmentGroupedByMaintenance[maintenanceKey]" class="list-group-item">
                         {{piece.piece}}
@@ -11,6 +12,21 @@
                         </maint-maintenance-alert>
                     </li>
                 </ul>
+                -->
+                <div ng-repeat="piece in vm.equipmentGroupedByMaintenance[maintenanceKey]">
+                    <div class="row">
+                        <div class="col-sm-5" style="text-align: right">
+                            {{piece.piece}}
+                        </div>
+                        <div class="col-sm-7">
+                            <maint-maintenance-alert status="piece.status">
+                                {{piece.status}}
+                            </maint-maintenance-alert>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </li>

@@ -13,10 +13,16 @@
     EquipmentService.$inject = [];
     function EquipmentService() {
 
+        function pieceHasMaintenanceType(piece, maintenanceType){
+            const i = piece.maintenance.findIndex(function (maint) {
+                return maint.maintenanceType === maintenanceType;
+            });
+            return i >= 0;
+        }
+
         const EquipmentService = {
             equipmentList: function () {
                 return equipment;
-
             },
             equipmentGroupedByMaintenance: function () {
                 const maintenanceMap = {};
@@ -32,6 +38,16 @@
                     });
                 });
                 return maintenanceMap;
+            },
+            equipmentForMaintenance: function (maintModel) {
+                return this.equipmentList().filter(function (piece) {
+                    for (let maintKey in maintModel) {
+                        if(pieceHasMaintenanceType(piece, maintKey) !== maintModel[maintKey]){
+                            return false
+                        }
+                    }
+                    return true;
+                });
             },
             maintenanceList: function () {
                 return maintenance;
