@@ -43,10 +43,20 @@
                 return this.equipmentList().filter(function (piece) {
                     for (let maintKey in maintModel) {
                         if(pieceHasMaintenanceType(piece, maintKey) !== maintModel[maintKey]){
-                            return false
+                            return false;
                         }
                     }
                     return true;
+                });
+            },
+            hasOneMaintenance: function (maintModel) {
+                return this.equipmentList().filter(function (piece) {
+                    for (let maintKey in maintModel) {
+                        if(maintModel[maintKey] && pieceHasMaintenanceType(piece, maintKey)){
+                            return true;
+                        }
+                    }
+                    return false;
                 });
             },
             maintenanceList: function () {

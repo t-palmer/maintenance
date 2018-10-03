@@ -6,6 +6,13 @@
                 {{piece.name}}
             </li>
         </ul>
+        <br>
+        <h4>This list contains equipment that has at least one of the selected maintenance.</h4>
+        <ul class="list-group">
+            <li ng-repeat="piece in vm.hasOneList" class="list-group-item">
+                {{piece.name}}
+            </li>
+        </ul>
     </div>
     <div class="col-sm-6">
         <ul class="list-group">

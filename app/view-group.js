@@ -17,6 +17,7 @@
 
         vm.maintenanceGroupChange = function () {
             vm.equipment = EquipmentService.equipmentForMaintenance(vm.maintModel);
+            vm.hasOneList = EquipmentService.hasOneMaintenance(vm.maintModel);
         };
 
         function initialize(){
